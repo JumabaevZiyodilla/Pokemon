@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <main>
+        <section>
+            
+            <div class="container">
+                <form class="pokemon-form" method="post" autocomplete="off">
+                    <input class="pokemon-input" type="text" placeholder="Enter pokemon name" required>
+                    <button class="pokemon-btn" type="submit">Search</button>
+                </form>
+                <ul class="pokemon_list">
+
+                </ul>
+            </div>
+        </section>
+    </main>
+    <template class="template">
+        <li class="pokemon__item">
+            <h3 class="pokemon__title"></h3>
+            <img class="pokemon__img" src="" alt="">
+            <span class="pokemon__span"></span>
+            <p class="pokemon__text"></p>
+            <time class="pokemon__time"></time>
+        </li>
+    </template>
+    <script src="./pokemons.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

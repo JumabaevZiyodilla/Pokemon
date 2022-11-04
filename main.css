@@ -65,7 +65,12 @@ body{
     width: 800px;
     margin: 30px auto;
 }
-.pokemon-input{
+.pokemon-input,
+.pokemon-select,
+.pokemon-min-year,
+.pokemon-max-year,
+.pokemon-sort,
+.pokemon-btn{
     padding: 10px;
     width: 200px;
     margin-right: 10px;

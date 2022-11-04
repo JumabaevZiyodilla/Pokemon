@@ -9,11 +9,22 @@
 </head>
 <body>
     <main>
-        <section>
-            
+        <section class="pokemon-section">
             <div class="container">
                 <form class="pokemon-form" method="post" autocomplete="off">
-                    <input class="pokemon-input" type="text" placeholder="Enter pokemon name" required>
+                    <input class="pokemon-input" type="search" placeholder="Enter pokemon name">
+                    <select class="pokemon-select">
+                        <option value="All">All</option>
+                    </select>
+                    <input class="pokemon-min-year" type="number" placeholder="from">
+                    <input class="pokemon-max-year" type="number" placeholder="to">
+                    <select class="pokemon-sort">
+                        <option enabled="disabled">Sorted Pokemons</option>
+                        <option value="a-z">A-Z</option>
+                        <option value="z-a">Z-A</option>
+                        <option value="thin-thick">Thin-Thick</option>
+                        <option value="thick-thin">Thick-Thin</option>
+                    </select>
                     <button class="pokemon-btn" type="submit">Search</button>
                 </form>
                 <ul class="pokemon_list">

@@ -1,7 +1,9 @@
 * {
     box-sizing: border-box;
 }
-
+body{
+    margin: 0px;
+}
 .pokemon-section {
     background-image: url("./img/pokemon.png");
     background-repeat: no-repeat;

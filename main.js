@@ -9,17 +9,22 @@ const elMinCandyCount = document.querySelector(".pokemon-min-year");
 const elMaxCandyCount = document.querySelector(".pokemon-max-year");
 
 
-function renderPokemon(pokemon) {
+function renderPokemon(pokemon, regex = "") {
     elPokemonList.innerHTML = ""
     
     pokemon.forEach(elPoke => {
         // TEMPLATENING ICHIDAGI BARCHA ELEMENTLARNI CHIQARIB OLAMIZ
         const pokemonFragmentClone = elTemplate.cloneNode(true);
 
+        if (regex.source != "(?:)" && regex) {
+            pokemonFragmentClone.querySelector(".pokemon__title").innerHTML = elPoke.name.replace(regex, `<mark class = "bg-warning mark">${regex.source.toLowerCase()}</mark>`);
+        } else {
+            pokemonFragmentClone.querySelector(".pokemon__title").textContent = elPoke.name;
+        }
         // FRAGMENTCLONE NI ICHIDAGI BARCHA ELEMENTLARGA TEXT CONTENT BERAMIZ
-        pokemonFragmentClone.querySelector(".pokemon__title").textContent = elPoke.name;
+        // pokemonFragmentClone.querySelector(".pokemon__title").textContent = elPoke.name;
         pokemonFragmentClone.querySelector(".pokemon__img").src = elPoke.img;
-        pokemonFragmentClone.querySelector(".pokemon__title").textContent = elPoke.name;
+        
         pokemonFragmentClone.querySelector(".pokemon__span").textContent = elPoke.num;
         pokemonFragmentClone.querySelector(".pokemon__text").textContent = elPoke.type.join(", ");
         pokemonFragmentClone.querySelector(".pokemon__time").textContent = elPoke.spawn_time;
@@ -89,7 +94,7 @@ elForm.addEventListener("submit", (evt) =>{
     })
     if(searchPokemon.length > 0){
         selectSort(searchPokemon,elSelectSort.value)
-        renderPokemon(searchPokemon);
+        renderPokemon(searchPokemon,regexInputValue);
     }else{
         elPokemonList.innerHTML = "Pokemon not found!"
     }
